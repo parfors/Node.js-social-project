@@ -4,7 +4,7 @@ require("dotenv").config;
 
 const app = express();
 
-const { postsRouter } = require("./routers/booksRouter");
+const { postsRouter } = require("./src/routers/booksRouter");
 
 const PORT = process.env.PORT || 8081;
 
