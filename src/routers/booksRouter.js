@@ -1,9 +1,9 @@
-const express = require("express");
-const router = express.Router();
+const express = require('express');
+const router = new express.Router();
 const {
   PostValidation,
   patchValidation,
-} = require("../middlewares/validationMiddleware");
+} = require('../middlewares/validationMiddleware');
 const {
   getPosts,
   getPostById,
@@ -11,13 +11,13 @@ const {
   changePost,
   patchPost,
   deletePost,
-} = require("../controllers/postsController");
+} = require('../controllers/postsController');
 
 router
-  .get("/", getPosts)
-  .get("/:id", getPostById)
-  .post("/", PostValidation, addPost)
-  .put("/:id", PostValidation, changePost)
-  .patch("/:id", patchValidation, patchPost)
-  .delete("/:id", deletePost);
-module.exports = { postsRouter: router };
+    .get('/', getPosts)
+    .get('/:id', getPostById)
+    .post('/', PostValidation, addPost)
+    .put('/:id', PostValidation, changePost)
+    .patch('/:id', patchValidation, patchPost)
+    .delete('/:id', deletePost);
+module.exports = {postsRouter: router};
